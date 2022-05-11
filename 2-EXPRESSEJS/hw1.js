@@ -28,7 +28,7 @@ app.get('/:n1/:n2/:n3/:n4', (req, res) => {
         return res.status(403).send('error range must be 1-9')
     }
 
-    const result = game24solver([b.n1, b.n2, b.n3, b.n4], 24);
+    const result = game24solver([parseInt(b.n1), parseInt(b.n2), parseInt(b.n3), parseInt(b.n4)], 24);
 
     if(result.length == 0) return res.send("FAIL NO SOLUTION FOULD")
     
